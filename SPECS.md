@@ -36,9 +36,12 @@ Eres un Frontend Senior Engineer con sólida experiencia en UX/UI, especializado
 ---
 
 ## Contenido
-- navbar (logo a la izquierda opciones a la derecha: explore, agentes, chat  al final a la derecha un carrito).
+- navbar (logo a la izquierda opciones a la derecha: explore, agentes,chat y metrics al final a la derecha un carrito).
 - Breve resumen de la pagina al lado derecho un buscador de de agentes.
-- Grid con 4 tarjetas las mismas: Cada tarjeta presenta un diseño moderno tipo dashboard SaaS en modo oscuro, con bordes redondeados, fondo en tonos azul oscuro, sombras sutiles y una jerarquía visual clara. Incluye un ícono, el nombre del agente, una breve descripción, etiquetas (tags) en formato pill con colores de acento y un indicador de estado, logrando una interfaz limpia, minimalista y profesional enfocada en la rápida identificación de las capacidades de cada agente
+- Grid con 4 tarjetas las mismas: Cada tarjeta presenta un diseño moderno tipo dashboard SaaS en modo oscuro, con bordes redondeados, fondo en tonos azul oscuro, sombras sutiles y una jerarquía visual clara. Incluye un ícono, el nombre del agente, una breve descripción, etiquetas (tags) en formato pill con almenos 4 skills con colores de acento y un indicador de estado, logrando una interfaz limpia, minimalista y profesional enfocada en la rápida identificación de las capacidades de cada agente un dropdown de 3 puntos donde esten las funciones de "ver detalle" y "eliminar".
+- Por defectos el user tiene 4 agentes ya contratados.
+
+- Para metrics necesito un dashboard con cuatro tarjetas con métricas clave (ingresos mensuales, pérdidas por descuentos, agentes activos y agentes con almenos 6 fallos hardcodeados) junto a un área reservada para el gráfico de actividad semanal. 
 
 Contenidos reutilizables:
 
