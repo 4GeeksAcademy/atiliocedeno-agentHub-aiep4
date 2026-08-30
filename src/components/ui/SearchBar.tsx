@@ -17,7 +17,7 @@ export default function SearchBar({ value, onChange, placeholder = 'Buscar agent
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full pl-12 pr-4 py-3 bg-[#1E293B] border border-[#334155] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+        className="w-full pl-12 pr-4 py-3 bg-white dark:bg-[#1E293B] border border-gray-300 dark:border-[#334155] rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
       />
     </div>
   );

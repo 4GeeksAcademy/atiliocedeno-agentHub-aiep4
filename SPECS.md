@@ -52,3 +52,8 @@ Contenidos reutilizables:
 - Badge: Etiquetas de estado o gravedad con código de color.
 - Lista de skills colapsable: Elemento expandible para ocultar o mostrar detalles.
 - Toggle de modo oscuro/claro: Interruptor global de tema.
+
+
+## mockUp
+
+https://stitch.withgoogle.com/projects/9222750460232612969

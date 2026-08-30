@@ -10,12 +10,12 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
         <div className="flex-1">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-montserrat leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white font-montserrat leading-tight">
             Alquila <span className="text-primary">Agentes de IA</span>
             <br />
             para tu Negocio
           </h1>
-          <p className="mt-4 text-gray-400 text-base md:text-lg leading-relaxed">
+          <p className="mt-4 text-gray-500 dark:text-gray-400 text-base md:text-lg leading-relaxed">
             AgentHub es una plataforma donde puedes alquilar y tener asesorías asociadas a agentes de IA.
             Implementa skills de IA para llevar a cabo diferentes tareas como navegación,
             búsqueda y gestión de documentos.
@@ -29,8 +29,8 @@ export default function HomePage() {
       {/* Agent Grid */}
       <section>
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-semibold text-white">Tus Agentes</h2>
-          <span className="text-sm text-gray-400">4 agentes contratados</span>
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Tus Agentes</h2>
+          <span className="text-sm text-gray-500 dark:text-gray-400">4 agentes contratados</span>
         </div>
         <AgentGrid />
       </section>

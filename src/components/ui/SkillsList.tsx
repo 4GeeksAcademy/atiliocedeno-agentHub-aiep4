@@ -23,7 +23,7 @@ export default function SkillsList({ skills, initialVisible = 2 }: SkillsListPro
       {!expanded && hiddenCount > 0 && (
         <button
           onClick={() => setExpanded(true)}
-          className="text-xs text-gray-400 hover:text-primary transition-colors"
+          className="text-xs text-gray-500 dark:text-gray-400 hover:text-primary transition-colors"
         >
           +{hiddenCount} más
         </button>
@@ -31,7 +31,7 @@ export default function SkillsList({ skills, initialVisible = 2 }: SkillsListPro
       {expanded && hiddenCount > 0 && (
         <button
           onClick={() => setExpanded(false)}
-          className="text-xs text-gray-400 hover:text-primary transition-colors"
+          className="text-xs text-gray-500 dark:text-gray-400 hover:text-primary transition-colors"
         >
           Mostrar menos
         </button>

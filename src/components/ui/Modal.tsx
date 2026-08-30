@@ -27,15 +27,15 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
         onClick={onClose}
       />
       {/* Modal */}
-      <div className="relative bg-[#1E293B] border border-[#334155] rounded-2xl p-6 max-w-lg w-full shadow-2xl animate-in">
+      <div className="relative bg-white dark:bg-[#1E293B] border border-gray-200 dark:border-[#334155] rounded-2xl p-6 max-w-lg w-full shadow-2xl animate-in">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-white">{title}</h3>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
           <button
             onClick={onClose}
-            className="p-1 rounded-lg hover:bg-[#334155] transition-colors"
+            className="p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-[#334155] transition-colors"
             aria-label="Cerrar"
           >
-            <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>

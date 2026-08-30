@@ -14,7 +14,7 @@ export default function App() {
     <BrowserRouter>
       <ThemeProvider>
         <AgentsProvider>
-          <div className="min-h-screen bg-neutral text-white">
+          <div className="min-h-screen bg-gray-50 text-gray-900 dark:bg-neutral dark:text-white">
             <Navbar />
             <div className="flex">
               <Sidebar />
