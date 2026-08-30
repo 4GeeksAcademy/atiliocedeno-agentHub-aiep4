@@ -15,7 +15,7 @@ Eres un Frontend Senior Engineer con sólida experiencia en UX/UI, especializado
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 - React
 - TypeScript
