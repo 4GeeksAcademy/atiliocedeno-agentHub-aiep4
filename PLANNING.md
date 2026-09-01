@@ -43,9 +43,9 @@
 
 | Tecnología | Propósito |
 |-----------|-----------|
-| **React** | Framework UI |
 | **TypeScript** | Tipado estático |
 | **Tailwind CSS** | Estilos (única librería permitida) |
+| **Vite** | Bundler |
 | **HTML Semántico** | Estructura accesible |
 | **Favicon** | Identidad visual |
 
@@ -286,10 +286,10 @@ const METRICS = {
 ## 10. ✅ Checklist de Implementación
 
 ### Fase 1 — Setup (Configuración Inicial)
-- [ ] Inicializar React + TypeScript + Tailwind
-- [ ] Configurar routing (React Router)
-- [ ] Configurar tema oscuro por defecto
-- [ ] Agregar favicon
+- [x] Inicializar proyecto con TypeScript + Tailwind + Vite (sin frameworks)
+- [x] Implementar router SPA vanilla con hash-based routing
+- [x] Configurar tema oscuro por defecto
+- [x] Agregar favicon
 
 ### Fase 2 — Layout Global
 - [ ] Implementar Navbar (logo + nav links + cart)
