@@ -4,31 +4,35 @@ import { AgentGrid } from "../components/agents/AgentGrid.js";
 import { store } from "../lib/appState.js";
 
 export function HomePage() {
-  const agents = store.get("agents");
   const container = h("div", { class: "flex flex-col gap-8" });
+
+  function getFilteredCount() {
+    const query = store.get("searchQuery").toLowerCase().trim();
+    const agents = store.get("agents");
+    return query
+      ? agents.filter((a) =>
+          a.name.toLowerCase().includes(query) ||
+          a.description.toLowerCase().includes(query) ||
+          a.skills.some((s) => s.toLowerCase().includes(query))
+        ).length
+      : agents.length;
+  }
 
   const section = h("section", {},
     h("div", { class: "flex items-center justify-between mb-6" },
       h("h2", { class: "text-xl font-semibold text-gray-900 dark:text-white" }, "Tus Agentes"),
-      h("span", { class: "text-sm text-gray-500 dark:text-gray-400", id: "agent-count" }, agents.length + " agentes contratados")
+      h("span", { class: "text-sm text-gray-500 dark:text-gray-400", id: "agent-count" }, getFilteredCount() + " agentes contratados")
     ),
     AgentGrid()
   );
 
   function updateCount() {
-    const query = store.get("searchQuery").toLowerCase().trim();
-    const filtered = query
-      ? agents.filter((a) =>
-          a.name.toLowerCase().includes(query) ||
-          a.description.toLowerCase().includes(query) ||
-          a.skills.some((s) => s.toLowerCase().includes(query))
-        )
-      : agents;
     const el = container.querySelector("#agent-count");
-    if (el) el.textContent = filtered.length + " agentes contratados";
+    if (el) el.textContent = getFilteredCount() + " agentes contratados";
   }
 
   store.subscribe("searchQuery", updateCount);
+  store.subscribe("agents", updateCount);
 
   container.appendChild(
     h("section", { class: "flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12" },

@@ -13,7 +13,16 @@ export class Store {
       try {
         const saved = localStorage.getItem(options.persistKey);
         if (saved) {
-          this.state = { ...initialState, ...JSON.parse(saved) };
+          const parsed = JSON.parse(saved);
+          // Merge saved state over initial, but keep initial defaults for empty arrays
+          this.state = { ...initialState };
+          for (const key of Object.keys(parsed)) {
+            if (Array.isArray(parsed[key]) && parsed[key].length === 0 && Array.isArray(initialState[key]) && initialState[key].length > 0) {
+              this.state[key] = initialState[key];
+            } else {
+              this.state[key] = parsed[key];
+            }
+          }
         }
       } catch {}
     }
