@@ -4,10 +4,14 @@ import { router } from "../../lib/router.js";
 import { DarkModeToggle } from "../ui/DarkModeToggle.js";
 
 const NAV_LINKS = [
-  { label: "Explore", path: "/explore" },
+  { label: "Inicio", path: "/" },
+  { label: "Explorar", path: "/explore" },
   { label: "Agentes", path: "/agentes" },
+  { label: "Usuarios", path: "/usuarios" },
+  { label: "Habilidades", path: "/skills" },
   { label: "Chat", path: "/chat" },
-  { label: "Metrics", path: "/metrics" },
+  { label: "Métricas", path: "/metrics" },
+  { label: "Registros", path: "/logs" },
 ];
 
 export function Navbar() {

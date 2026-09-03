@@ -2,7 +2,7 @@
  * Modal component
  */
 import { h, ICONS, iconSvg } from '../../lib/dom.js';
-import { store, closeModal } from '../../lib/appState.js';
+import { closeModal } from '../../lib/appState.js';
 
 export function Modal(title, body) {
   const overlay = h('div', { class: 'fixed inset-0 z-50 flex items-center justify-center p-4' });
@@ -29,13 +29,6 @@ export function Modal(title, body) {
   overlay.appendChild(modal);
 
   document.body.style.overflow = 'hidden';
-
-  const unsub = store.subscribe('modalContent', () => {
-    if (!store.get('modalContent').open) {
-      document.body.style.overflow = '';
-      unsub();
-    }
-  });
 
   return overlay;
 }

@@ -40,6 +40,7 @@ export function openModal(title, body) {
 }
 
 export function closeModal() {
+  document.body.style.overflow = '';
   store.update(() => ({ modalOpen: false, modalBody: null }));
 }
 

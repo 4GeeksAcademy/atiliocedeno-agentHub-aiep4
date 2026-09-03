@@ -4,10 +4,13 @@ import { router } from "../../lib/router.js";
 
 const SIDEBAR_LINKS = [
   { label: "Inicio", path: "/", icon: "🏠" },
-  { label: "Explore", path: "/explore", icon: "🔎" },
+  { label: "Explorar", path: "/explore", icon: "🔎" },
   { label: "Agentes", path: "/agentes", icon: "🤖" },
+  { label: "Usuarios", path: "/usuarios", icon: "👥" },
+  { label: "Habilidades", path: "/skills", icon: "⚡" },
   { label: "Chat", path: "/chat", icon: "💬" },
-  { label: "Metrics", path: "/metrics", icon: "📊" },
+  { label: "Métricas", path: "/metrics", icon: "📊" },
+  { label: "Registros", path: "/logs", icon: "📋" },
 ];
 
 export function Sidebar() {
