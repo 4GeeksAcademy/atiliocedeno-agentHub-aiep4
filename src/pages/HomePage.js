@@ -5,7 +5,32 @@ import { store } from "../lib/appState.js";
 
 export function HomePage() {
   const agents = store.get("agents");
-  return h("div", { class: "flex flex-col gap-8" },
+  const container = h("div", { class: "flex flex-col gap-8" });
+
+  const section = h("section", {},
+    h("div", { class: "flex items-center justify-between mb-6" },
+      h("h2", { class: "text-xl font-semibold text-gray-900 dark:text-white" }, "Tus Agentes"),
+      h("span", { class: "text-sm text-gray-500 dark:text-gray-400", id: "agent-count" }, agents.length + " agentes contratados")
+    ),
+    AgentGrid()
+  );
+
+  function updateCount() {
+    const query = store.get("searchQuery").toLowerCase().trim();
+    const filtered = query
+      ? agents.filter((a) =>
+          a.name.toLowerCase().includes(query) ||
+          a.description.toLowerCase().includes(query) ||
+          a.skills.some((s) => s.toLowerCase().includes(query))
+        )
+      : agents;
+    const el = container.querySelector("#agent-count");
+    if (el) el.textContent = filtered.length + " agentes contratados";
+  }
+
+  store.subscribe("searchQuery", updateCount);
+
+  container.appendChild(
     h("section", { class: "flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12" },
       h("div", { class: "flex-1" },
         h("h1", { class: "text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white font-montserrat leading-tight" },
@@ -16,13 +41,10 @@ export function HomePage() {
         )
       ),
       h("div", { class: "w-full md:w-auto" }, SearchBar())
-    ),
-    h("section", {},
-      h("div", { class: "flex items-center justify-between mb-6" },
-        h("h2", { class: "text-xl font-semibold text-gray-900 dark:text-white" }, "Tus Agentes"),
-        h("span", { class: "text-sm text-gray-500 dark:text-gray-400" }, agents.length + " agentes contratados")
-      ),
-      AgentGrid()
     )
   );
+
+  container.appendChild(section);
+
+  return container;
 }
